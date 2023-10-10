@@ -6,7 +6,7 @@ class Solution:
         answer = float("+inf")
         for i, start in enumerate(nums):
             
-            search = start + n - 1  # number to search
+            search = start + n - 1
             start, end = 0, len(nums)-1
             
             while start <= end:
