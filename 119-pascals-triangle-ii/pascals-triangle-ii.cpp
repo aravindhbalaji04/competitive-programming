@@ -11,10 +11,8 @@ public:
                 int sum = previousRowList[j] + previousRowList[j - 1];
                 currentRowList.push_back(sum);
             }
-
                 currentRowList.push_back(1);
         }
-
         return pascalTriangle[rowIndex];
     }
 };
