@@ -9,25 +9,36 @@ class Solution
 	public:
 	int nodeLevel(int V, vector<int> adj[], int X) 
 	{
-	    queue<pair<int,int>> q;
-	    q.push({0,0});
-	    bool visited[V]={false};
-	    visited[0]=true;
-	    while(!q.empty()){
-	        int node = q.front().first;
-	        int ans = q.front().second;
-	        q.pop();
-	        if(node == X) return ans;
-	        for(auto it : adj[node]){
-	            if(!visited[it]) {
-	                q.push({it, ans+1});
-	                visited[it]=true;
-	            }
-	        }
-	    }
-	    return -1;
+	    vector<bool> visited(V, false);
+        vector<int> level(V, 0);
+
+        queue<int> q;
+        q.push(0);
+        visited[0] = true;
+
+        while (!q.empty())
+        {
+            int current = q.front();
+            q.pop();
+
+            for (int neighbor : adj[current])
+            {
+                if (!visited[neighbor])
+                {
+                    visited[neighbor] = true;
+                    level[neighbor] = level[current] + 1;
+                    q.push(neighbor);
+                }
+            }
+        }
+
+        if (visited[X])
+            return level[X];
+        else
+            return -1;
 	}
 };
+
 
 //{ Driver Code Starts.
 
