@@ -13,3 +13,4 @@ class Solution:
             for start in range(len(s)-length+1):
                 if check(start,start+length):
                     return s[start:start+length]
+        return ""
