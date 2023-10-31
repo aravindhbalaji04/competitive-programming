@@ -1,7 +1,10 @@
 class Solution:
     def check(self, nums: List[int]) -> bool:
-        for i in range(len(nums)):
-            if nums == sorted(nums):
-                return True
-            nums=nums[1:] + [nums[0]]
-        return False
+      n=len(nums)
+      count=0
+      for i in range(n-1):
+        if nums[i]>nums[i+1]:
+          count+=1
+      if nums[0]<nums[n-1]:
+        count+=1
+      return count<=1
