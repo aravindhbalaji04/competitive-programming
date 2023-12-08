@@ -1,18 +1,19 @@
 class Solution:
     def minNumber(self, arr,n):
-        x=sum(arr)
-        def isprime(num):
-            for i in range(2,int((num)**(0.5))+1):
-                if num%i==0:
-                    return False
-            return True
-        count=0  
-        if isprime(x):
-            return 0
-        while not isprime(x):
-            count+=1
-            x+=1
-        return count
+        def checkPrime(N):
+            if N>1:
+                for i in range(2,int(N**0.5)+1):
+                    if N%i==0:
+                        return False
+                return True
+            else:
+                return False
+        i=0
+        ans=sum(arr)
+        while True:
+            if checkPrime(ans+i):
+               return i
+            i+=1
 
 #{ 
  # Driver Code Starts
