@@ -1,3 +1,7 @@
 class Solution:
     def majorityElement(self, nums):
-        return [num for num, count in Counter(nums).items() if count > len(nums) // 3]
+        x = []
+        for i in range(len(nums)):
+            if nums.count(nums[i]) > len(nums)/3:
+                x.append(nums[i])
+        return list(set(x))
