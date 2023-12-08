@@ -4,6 +4,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] > 0:
                 x += 1
+                break
         if x > 0:
             best, total = 0, 0
             for i in range(len(nums)):
