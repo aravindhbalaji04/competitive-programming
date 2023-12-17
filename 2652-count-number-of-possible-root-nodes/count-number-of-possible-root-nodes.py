@@ -11,7 +11,6 @@ class Solution:
             else:
                 s.remove((j, i))
                 cnt += 1
-        
         g = [[] for _ in range(n + 1)]
         for i, j in edges:
             g[i].append(j)
@@ -30,7 +29,6 @@ class Solution:
                         cnt += 1
         if cnt >= k:
             ans += 1
-            
         q = deque([0])
         dp = [-1] * (n + 1)
         dp[0] = cnt
