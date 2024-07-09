@@ -1,9 +1,8 @@
 class Solution:
     def averageWaitingTime(self, customers: List[List[int]]) -> float:
-        next_idle_time = 0
-        net_wait_time = 0
+        idle = 0
+        wait = 0
         for customer in customers:
-            next_idle_time = max(customer[0], next_idle_time) + customer[1]
-            net_wait_time += next_idle_time - customer[0]
-        average_wait_time = net_wait_time / len(customers)
-        return average_wait_time
+            idle = max(customer[0], idle) + customer[1]
+            wait += idle - customer[0]
+        return wait / len(customers)
