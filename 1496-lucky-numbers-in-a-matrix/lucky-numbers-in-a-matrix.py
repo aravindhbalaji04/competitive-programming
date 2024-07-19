@@ -1,7 +1,11 @@
 class Solution:
     def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
-        row, col = [], []
-        new = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+        row, col, new = [], [], []
+        for i in range(len(matrix[0])):
+            temp = []
+            for j in range(len(matrix)):
+                temp.append(matrix[j][i])
+            new.append(temp)
         for i in range(len(matrix)):
             row.append(min(matrix[i]))
         for i in range(len(new)):
