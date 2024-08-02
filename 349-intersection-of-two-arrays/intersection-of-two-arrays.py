@@ -6,4 +6,3 @@ class Solution:
             if num in s:
                 common.add(num)
         return common
-        
