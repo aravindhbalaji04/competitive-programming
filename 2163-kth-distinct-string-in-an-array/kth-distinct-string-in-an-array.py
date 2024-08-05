@@ -1,8 +1,7 @@
 class Solution:
     def kthDistinct(self, arr: List[str], k: int) -> str:
-        for i in range(len(arr)):
-            if arr.count(arr[i]) == 1:
-                if k == 1:
-                    return arr[i]
+        for s, f in Counter(arr).items():
+            if f == 1:
                 k -= 1
-        return ''
+                if not k: return s
+        return ""
