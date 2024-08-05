@@ -1,7 +1,11 @@
+from collections import Counter
 class Solution:
     def kthDistinct(self, arr: List[str], k: int) -> str:
-        for s, f in Counter(arr).items():
-            if f == 1:
-                k -= 1
-                if not k: return s
+        d = Counter(arr)
+        a = 0
+        for i, j in d.items():
+            if j == 1:
+                a += 1
+                if a == k:
+                    return i
         return ""
