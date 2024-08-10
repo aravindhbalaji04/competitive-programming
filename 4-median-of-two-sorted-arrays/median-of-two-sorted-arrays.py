@@ -3,8 +3,6 @@ class Solution:
         nums = sorted(nums1 + nums2)
         N = len(nums)
         if N%2==1:
-            median = nums[(N-1)//2]
-            return median
+            return nums[(N-1)//2]
         else:
-            median = (nums[round((N/2)-1)]+nums[round(N/2)])/2
-            return median
+            return (nums[round((N/2)-1)]+nums[round(N/2)])/2
