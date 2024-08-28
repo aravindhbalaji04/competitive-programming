@@ -4,6 +4,12 @@ class Solution:
             return False
         countS, countT = {}, {}
         for i in range(len(s)):
-            countS[s[i]] = 1 + countS.get(s[i], 0)
-            countT[t[i]] = 1 + countT.get(t[i], 0)
+            if s[i] in countS:
+                countS[s[i]] += 1
+            else:
+                countS[s[i]] = 1
+            if t[i] in countT:
+                countT[t[i]] += 1
+            else:
+                countT[t[i]] = 1
         return countS == countT
