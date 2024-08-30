@@ -7,4 +7,3 @@ class Solution:
             curr_min,curr_max=min(x),max(x)
             ans = max(ans,curr_max)
         return ans
-    
