@@ -1,15 +1,11 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        total = status = 1
+        total = 1
         ans = []
         for i in range(len(nums)):
-                if nums[i] == 0:
-                    continue
-                else:
+                if nums[i] != 0:
                     total *= nums[i]
-        if nums.count(0) > 0:
-            status = 0
-        if status:
+        if nums.count(0) == 0:
             for i in range(len(nums)):
                 ans.append(total//nums[i])
             return ans
