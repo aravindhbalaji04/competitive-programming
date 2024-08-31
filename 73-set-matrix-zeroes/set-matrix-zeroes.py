@@ -14,4 +14,3 @@ class Solution:
             if c[i] == 0:
                 for j in range(len(matrix)):
                     matrix[j][i] = 0
-        return [[]]
