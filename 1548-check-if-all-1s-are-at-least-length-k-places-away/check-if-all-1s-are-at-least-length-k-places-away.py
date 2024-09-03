@@ -1,8 +1,8 @@
 class Solution:
     def kLengthApart(self, nums: List[int], k: int) -> bool:
         count = k
-        for num in nums:
-            if num == 1:
+        for i in nums:
+            if i == 1:
                 if count < k:
                     return False
                 count = 0
