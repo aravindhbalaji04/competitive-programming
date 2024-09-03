@@ -7,8 +7,7 @@ class Solution:
         total = 0
         for i in a:
             total += int(i)
-        k -= 1
-        while k > 0:
+        while k-1 > 0:
             a = str(total)
             total = 0
             for i in a:
