@@ -1,19 +1,18 @@
 class Solution:
     def getLucky(self, s: str, k: int) -> int:
-        def replace_letters(text):
-            alphabet = {chr(i): i - 96 for i in range(97, 123)}
-            replaced_text = ' '.join(str(alphabet[char]) for char in text.lower() if char in alphabet)
-            return replaced_text
-        s = replace_letters(s)
-        total = 0
+        dick = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 'j':10, 'k':11, 'l':12, 'm':13, 'n':14,  'o':15, 'p':16, 'q':17, 'r':18, 's':19, 't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26}
+        a = ''
         for i in s:
+            a += str(dick[i])
+        total = 0
+        for i in a:
             if i != ' ':
                 total += int(i)
         k -= 1
         while k > 0:
-            s = str(total)
+            a = str(total)
             total = 0
-            for i in s:
+            for i in a:
                 total += int(i)
             k -= 1
         return total
