@@ -1,8 +1,8 @@
-class Solution(object):
-    def minAddToMakeValid(self, S):
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
         ans = bal = 0
-        for symbol in S:
-            if symbol == '(':
+        for i in s:
+            if i == '(':
                 bal += 1
             else:
                 bal -= 1
