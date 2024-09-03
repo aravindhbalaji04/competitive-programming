@@ -6,8 +6,7 @@ class Solution:
             a += str(dick[i])
         total = 0
         for i in a:
-            if i != ' ':
-                total += int(i)
+            total += int(i)
         k -= 1
         while k > 0:
             a = str(total)
