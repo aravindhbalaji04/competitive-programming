@@ -1,11 +1,11 @@
 class Solution:
     def kLengthApart(self, nums: List[int], k: int) -> bool:
-        count = k
+        cunt = k
         for i in nums:
             if i == 1:
-                if count < k:
+                if cunt < k:
                     return False
-                count = 0
+                cunt = 0
             else:
-                count += 1
+                cunt += 1
         return True
