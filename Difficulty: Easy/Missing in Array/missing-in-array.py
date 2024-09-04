@@ -1,10 +1,12 @@
 class Solution:
     def missingNumber(self, n, arr):
-        sum1 = sum(arr)
-        sum2 = 0
-        for i in range(1, n+1):
-            sum2 += i
-        return sum2 - sum1
+        arr.sort()
+        if arr[0] != 1:
+            return 1
+        for i in range(1, len(arr)):
+            if i+1 != arr[i]:
+                return i+1
+        return len(arr)+1
 
 #{ 
  # Driver Code Starts
