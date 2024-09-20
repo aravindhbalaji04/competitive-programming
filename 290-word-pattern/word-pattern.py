@@ -1,7 +1,7 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         s = s.split(' ')
-        if len(pattern) != len(s):
+        if len(list(set(pattern))) != len(list(set(s))) or len(pattern) != len(s):
             return False
         freq = {}
         for i in range(len(pattern)):
@@ -10,4 +10,4 @@ class Solution:
             else:
                 if freq[pattern[i]] != s[i]:
                     return False
-        return len(list(set(pattern))) == len(list(set(s)))
+        return True
