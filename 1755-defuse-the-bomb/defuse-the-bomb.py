@@ -10,6 +10,5 @@ class Solution:
                 ans.append(sum(extended[i+1:i+k+1]))
         else:
             for i in range(n):
-                print(extended[i-1:i-k])
                 ans.append(sum(extended[i+n+k:i+n]))
         return ans
